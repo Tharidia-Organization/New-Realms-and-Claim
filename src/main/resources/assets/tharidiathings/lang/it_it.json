@@ -1,3 +1,11 @@
 {
-  "itemGroup.tharidiathings": "Tharidia Things - Realm"
+  "itemGroup.tharidiathings": "Tharidia Things - Realm",
+  "block.tharidiathings.pietro": "Reame",
+  "block.tharidiathings.claim": "Rivendicazione",
+
+  "container.tharidiathings.claim": "Rivendicazione",
+  "container.tharidiathings.pietro": "Le cose di Tharidia",
+
+  "key.categories.tharidiathings": "Tharidia Things",
+  "key.tharidiathings.toggle_claim_boundaries": "Attiva/Disattiva Confini Rivendicazione"
 }
