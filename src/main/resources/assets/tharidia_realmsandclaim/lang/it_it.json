@@ -1,0 +1,57 @@
+{
+  "itemGroup.tharidia_realmsandclaim": "Tharidia - Reami e Rivendicazioni",
+  "block.tharidia_realmsandclaim.pietro": "Reame",
+  "block.tharidia_realmsandclaim.claim": "Rivendicazione",
+
+  "container.tharidia_realmsandclaim.claim": "Rivendicazione",
+  "container.tharidia_realmsandclaim.pietro": "Reame di Tharidia",
+
+  "key.categories.tharidia_realmsandclaim": "Tharidia - Reami e Rivendicazioni",
+  "key.tharidia_realmsandclaim.toggle_claim_boundaries": "Attiva/Disattiva Confini Rivendicazione",
+
+  "gui.tharidia_realmsandclaim.claim.parchment_title": "Pergamena del Dominio",
+  "gui.tharidia_realmsandclaim.claim.title": "Dominio Feudale",
+  "gui.tharidia_realmsandclaim.claim.owner_label": "§6§lSignore del Dominio:",
+  "gui.tharidia_realmsandclaim.claim.status_label": "§6§lStato del Dominio:",
+  "gui.tharidia_realmsandclaim.claim.expired": "§c§lSCADUTO",
+  "gui.tharidia_realmsandclaim.claim.time_left_label": "§6Tempo Restante:",
+  "gui.tharidia_realmsandclaim.claim.time_left_value": "§e§l%dh %dm %ds",
+  "gui.tharidia_realmsandclaim.claim.expires_on_label": "§6Scade il:",
+  "gui.tharidia_realmsandclaim.claim.perpetual": "§a§lDOMINIO PERPETUO",
+  "gui.tharidia_realmsandclaim.claim.protection_radius_label": "§6§lRaggio di Protezione:",
+  "gui.tharidia_realmsandclaim.claim.protection_radius_value": "§e§l%s blocchi",
+
+  "gui.tharidia_realmsandclaim.realm.title": "Reame",
+  "gui.tharidia_realmsandclaim.realm.currency_label": "Monete",
+  "gui.tharidia_realmsandclaim.realm.tab.expansion": "Espansione",
+  "gui.tharidia_realmsandclaim.realm.tab.claims": "Rivendicazioni",
+  "gui.tharidia_realmsandclaim.realm.tab.dungeon": "Dungeon",
+
+  "gui.tharidia_realmsandclaim.realm.lord_label": "§6§lSignore:",
+  "gui.tharidia_realmsandclaim.realm.size_label": "§6§lDimensione del Reame:",
+  "gui.tharidia_realmsandclaim.realm.size_value": "§e§lLivello %s",
+  "gui.tharidia_realmsandclaim.realm.max_level": "§5§lLivello massimo raggiunto",
+  "gui.tharidia_realmsandclaim.realm.expansion_cost_label": "§6§lCosto Espansione:",
+  "gui.tharidia_realmsandclaim.realm.coins_needed": "§6Monete necessarie: %s",
+  "gui.tharidia_realmsandclaim.realm.deposit_hint_1": "Deposita patate nello slot in alto.",
+  "gui.tharidia_realmsandclaim.realm.deposit_hint_2": "Saranno convertite in monete.",
+
+  "gui.tharidia_realmsandclaim.realm.claims_title": "§6§lRivendicazioni",
+  "gui.tharidia_realmsandclaim.realm.treasury": "§6§lTesoro: §e%s",
+  "gui.tharidia_realmsandclaim.realm.hierarchy_title": "§6§lGerarchia",
+  "gui.tharidia_realmsandclaim.realm.rank_change": "Cambia",
+  "gui.tharidia_realmsandclaim.realm.rank_select_title": "Seleziona grado",
+  "gui.tharidia_realmsandclaim.realm.rank.colono": "Colono",
+  "gui.tharidia_realmsandclaim.realm.rank.miliziano": "Miliziano",
+  "gui.tharidia_realmsandclaim.realm.rank.guardia": "Guardia",
+  "gui.tharidia_realmsandclaim.realm.rank.consigliere": "Consigliere",
+  "gui.tharidia_realmsandclaim.realm.rank.lord": "Signore",
+
+  "gui.tharidia_realmsandclaim.realm.dungeon_title": "§6§lDungeon",
+  "gui.tharidia_realmsandclaim.realm.dungeon_enter_label": "§6§lEntra nel Dungeon:",
+  "gui.tharidia_realmsandclaim.realm.dungeon_desc_1": "Affronta prove e mostri",
+  "gui.tharidia_realmsandclaim.realm.dungeon_desc_2": "per ottenere ricompense per il reame.",
+  "gui.tharidia_realmsandclaim.realm.queue_status_label": "§6§lStato coda:",
+  "gui.tharidia_realmsandclaim.realm.queue_ready": "§5§lPronto",
+  "gui.tharidia_realmsandclaim.realm.dungeon.enter_button": "Entra"
+}

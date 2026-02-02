@@ -1,0 +1,61 @@
+{
+  "itemGroup.tharidia_realmsandclaim": "Tharidia - Realms and Claim",
+  "block.tharidia_realmsandclaim.pietro": "Realm",
+  "block.tharidia_realmsandclaim.claim": "Claim",
+
+  "container.tharidia_realmsandclaim.claim": "Claim",
+  "container.tharidia_realmsandclaim.pietro": "Realm of Tharidia",
+
+  "key.categories.tharidia_realmsandclaim": "Tharidia - Realms and Claim",
+  "key.tharidia_realmsandclaim.toggle_claim_boundaries": "Toggle Claim Boundaries",
+
+  "gui.tharidia_realmsandclaim.claim.parchment_title": "Claim Parchment",
+  "gui.tharidia_realmsandclaim.claim.title": "Feudal Domain",
+  "gui.tharidia_realmsandclaim.claim.owner_label": "Lord of the Domain:",
+  "gui.tharidia_realmsandclaim.claim.status_label": "Domain Status:",
+  "gui.tharidia_realmsandclaim.claim.expired": "EXPIRED",
+  "gui.tharidia_realmsandclaim.claim.time_left_label": "Time Left:",
+  "gui.tharidia_realmsandclaim.claim.time_left_value": "%dh %dm %ds",
+  "gui.tharidia_realmsandclaim.claim.expires_on_label": "Expires on:",
+  "gui.tharidia_realmsandclaim.claim.perpetual": "PERPETUAL DOMAIN",
+  "gui.tharidia_realmsandclaim.claim.protection_radius_label": "Protection Radius:",
+  "gui.tharidia_realmsandclaim.claim.protection_radius_value": "%s blocks",
+
+  "gui.tharidia_realmsandclaim.realm.title": "Realm",
+  "gui.tharidia_realmsandclaim.realm.currency_label": "Coins",
+  "gui.tharidia_realmsandclaim.realm.tab.expansion": "Expansion",
+  "gui.tharidia_realmsandclaim.realm.tab.claims": "Claims",
+  "gui.tharidia_realmsandclaim.realm.tab.dungeon": "Dungeon",
+
+  "gui.tharidia_realmsandclaim.realm.lord_label": "Lord:",
+  "gui.tharidia_realmsandclaim.realm.size_label": "Realm Size:",
+  "gui.tharidia_realmsandclaim.realm.size_value": "Level %s",
+  "gui.tharidia_realmsandclaim.realm.max_level": "Maximum level reached",
+  "gui.tharidia_realmsandclaim.realm.expansion_cost_label": "Expansion Cost:",
+  "gui.tharidia_realmsandclaim.realm.coins_needed": "Coins needed: %s",
+  "gui.tharidia_realmsandclaim.realm.deposit_hint_1": "Deposit potatoes in the slot above.",
+  "gui.tharidia_realmsandclaim.realm.deposit_hint_2": "They will be converted into coins.",
+
+  "gui.tharidia_realmsandclaim.realm.claims_title": "Claims",
+  "gui.tharidia_realmsandclaim.realm.treasury": "Treasury: %s",
+  "gui.tharidia_realmsandclaim.realm.hierarchy_title": "Hierarchy",
+  "gui.tharidia_realmsandclaim.realm.rank_change": "Change",
+  "gui.tharidia_realmsandclaim.realm.rank_select_title": "Select rank",
+  "gui.tharidia_realmsandclaim.realm.rank.colono": "Settler",
+  "gui.tharidia_realmsandclaim.realm.rank.miliziano": "Militiaman",
+  "gui.tharidia_realmsandclaim.realm.rank.guardia": "Guard",
+  "gui.tharidia_realmsandclaim.realm.rank.consigliere": "Counselor",
+  "gui.tharidia_realmsandclaim.realm.rank.lord": "Lord",
+
+  "gui.tharidia_realmsandclaim.realm.dungeon_title": "Dungeon",
+  "gui.tharidia_realmsandclaim.realm.dungeon_enter_label": "Enter the Dungeon:",
+  "gui.tharidia_realmsandclaim.realm.dungeon_desc_1": "Face trials and fight monsters",
+  "gui.tharidia_realmsandclaim.realm.dungeon_desc_2": "to earn rewards for your realm.",
+  "gui.tharidia_realmsandclaim.realm.queue_status_label": "Queue Status:",
+  "gui.tharidia_realmsandclaim.realm.queue_ready": "Ready",
+  "gui.tharidia_realmsandclaim.realm.dungeon.enter_button": "Enter",
+  "gui.tharidia_realmsandclaim.realm.dungeon_not_available": "Not available in this version",
+
+  "gui.tharidia_realmsandclaim.common.unknown": "Unknown",
+  "gui.tharidia_realmsandclaim.common.player_unknown": "Player %s"
+}

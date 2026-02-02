@@ -3,24 +3,33 @@ loaderVersion="[4,)"
 license="All Rights Reserved"
 
 [[mods]]
-modId="tharidiathings"
-version="1.0.0"
-displayName="Tharidia Things - Realm & Claims"
+modId="tharidia_realmsandclaim"
+version="0.1.0-alpha"
+displayName="Tharidia - Realms and Claim"
 description='''
-Territory management system with realms, claims, and hierarchies.
+[ALPHA - Under Development]
+Advanced territory management system for the Tharidia medieval roleplay server.
+Provides realms, claims, hierarchies, and protection mechanics.
 '''
-authors="THproject"
+authors="Tharidia Development Team"
 
-[[dependencies.tharidiathings]]
+[[dependencies.tharidia_realmsandclaim]]
     modId="neoforge"
     type="required"
     versionRange="[21.1,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.tharidiathings]]
+[[dependencies.tharidia_realmsandclaim]]
     modId="minecraft"
     type="required"
     versionRange="[1.21.1,1.22)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.tharidia_realmsandclaim]]
+    modId="jei"
+    type="optional"
+    versionRange="[19.0.0,)"
+    ordering="AFTER"
+    side="CLIENT"
