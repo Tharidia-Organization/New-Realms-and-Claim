@@ -60,7 +60,7 @@ public class ClaimProtectionHandler {
         if (level.getBlockState(pos).getBlock() instanceof PietroBlock) {
             if (isPietroBlockProtected(serverLevel, pos, player)) {
                 event.setCanceled(true);
-                player.sendSystemMessage(Component.literal("§cCannot remove Pietro block while claims exist in its realm!"));
+                player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.cannot_remove_pietro").withStyle(style -> style.withColor(0xFF5555)));
             }
             return;
         }
@@ -73,7 +73,7 @@ public class ClaimProtectionHandler {
                 // Only allow breaking crops if the player has a claim in the realm
                 if (!hasClaimInRealm(player.getUUID(), realm, serverLevel)) {
                     event.setCanceled(true);
-                    player.sendSystemMessage(Component.literal("§cPuoi interagire con i raccolti solo se hai un claim in questo regno!"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.crops_need_claim").withStyle(style -> style.withColor(0xFF5555)));
                     return;
                 }
             }
@@ -85,7 +85,7 @@ public class ClaimProtectionHandler {
         ClaimBlockEntity claim = findClaimForPosition(serverLevel, pos);
         if (claim != null && !canPlayerInteract(claim, player)) {
             event.setCanceled(true);
-            player.sendSystemMessage(Component.literal("§cQuesta area è protetta da un Claim!"));
+            player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.area_protected").withStyle(style -> style.withColor(0xFF5555)));
         }
     }
 
@@ -115,7 +115,7 @@ public class ClaimProtectionHandler {
                 // Only allow interacting with crops if the player has a claim in the realm
                 if (!hasClaimInRealm(player.getUUID(), realm, serverLevel)) {
                     event.setCanceled(true);
-                    player.sendSystemMessage(Component.literal("§cPuoi interagire con i raccolti solo se hai un claim in questo regno!"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.crops_need_claim").withStyle(style -> style.withColor(0xFF5555)));
                     return;
                 }
             }
@@ -127,7 +127,7 @@ public class ClaimProtectionHandler {
         ClaimBlockEntity claim = findClaimForPosition(serverLevel, pos);
         if (claim != null && !canPlayerInteract(claim, player)) {
             event.setCanceled(true);
-            player.sendSystemMessage(Component.literal("§cQuesta area è protetta da un Claim!"));
+            player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.area_protected").withStyle(style -> style.withColor(0xFF5555)));
         }
     }
 
@@ -153,7 +153,7 @@ public class ClaimProtectionHandler {
         ClaimBlockEntity claim = findClaimForPosition(serverLevel, pos);
         if (claim != null && !canPlayerInteract(claim, player)) {
             event.setCanceled(true);
-            player.sendSystemMessage(Component.literal("§cQuesta area è protetta da un Claim!"));
+            player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.area_protected").withStyle(style -> style.withColor(0xFF5555)));
         }
     }
 
@@ -251,7 +251,7 @@ public class ClaimProtectionHandler {
         // PvP is ALWAYS disabled in claims
         if (attackerClaim != null || targetClaim != null) {
             event.setCanceled(true);
-            attacker.sendSystemMessage(Component.literal("§cPvP è disabilitato nelle aree protette!"));
+            attacker.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.protection.pvp_disabled").withStyle(style -> style.withColor(0xFF5555)));
             
             LOGGER.info("PvP attack blocked in claim - Attacker: {} (in claim: {}), Target: {} (in claim: {})", 
                 attacker.getName().getString(), 

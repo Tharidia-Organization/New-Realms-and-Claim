@@ -54,18 +54,24 @@ public class RealmPlacementHandler {
                         if (playerUUID != null && RealmManager.playerOwnsRealm(serverLevel, playerUUID)) {
                             // Player already owns a realm
                             player.sendSystemMessage(
-                                Component.literal("§cCannot place Realm block!")
-                                    .append(Component.literal("\n§7You already own a realm. Each player can only have one realm."))
+                                Component.translatable("message.tharidia_realmsandclaim.realm.cannot_place").withStyle(style -> style.withColor(0xFF5555))
+                            );
+                            player.sendSystemMessage(
+                                Component.translatable("message.tharidia_realmsandclaim.realm.already_own_realm").withStyle(style -> style.withColor(0xAAAAAA))
                             );
                         } else {
                             // Too close to another realm
                             int distance = PietroBlock.getDistanceToNearestRealm(serverLevel, pos);
                             int needed = PietroBlock.MIN_DISTANCE_CHUNKS - distance;
-                            
+
                             player.sendSystemMessage(
-                                Component.literal("§cCannot place Realm block here!")
-                                    .append(Component.literal("\n§7Too close to another realm. Move " + needed + " chunks away."))
-                                    .append(Component.literal("\n§7(Minimum distance: " + PietroBlock.MIN_DISTANCE_CHUNKS + " chunks)"))
+                                Component.translatable("message.tharidia_realmsandclaim.realm.cannot_place_here").withStyle(style -> style.withColor(0xFF5555))
+                            );
+                            player.sendSystemMessage(
+                                Component.translatable("message.tharidia_realmsandclaim.realm.too_close", needed).withStyle(style -> style.withColor(0xAAAAAA))
+                            );
+                            player.sendSystemMessage(
+                                Component.translatable("message.tharidia_realmsandclaim.realm.min_distance", PietroBlock.MIN_DISTANCE_CHUNKS).withStyle(style -> style.withColor(0xAAAAAA))
                             );
                         }
                         

@@ -121,8 +121,11 @@ public class ClaimExpirationHandler {
                 // Notify owner if online
                 ServerPlayer owner = server.getPlayerList().getPlayer(ownerUUID);
                 if (owner != null) {
-                    owner.sendSystemMessage(Component.literal("§c§l[!] Your claim '" + 
-                        (claimName.isEmpty() ? "Unnamed" : claimName) + "' has expired and been removed!"));
+                    String displayName = claimName.isEmpty()
+                        ? Component.translatable("message.tharidia_realmsandclaim.claim.unnamed").getString()
+                        : claimName;
+                    owner.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.expired_removed", displayName)
+                        .withStyle(style -> style.withColor(0xFF5555).withBold(true)));
                 }
                 
                 // Remove the claim block
@@ -160,7 +163,9 @@ public class ClaimExpirationHandler {
         long hours = timeLeft / (60 * 60 * 1000);
         long minutes = (timeLeft % (60 * 60 * 1000)) / (60 * 1000);
         
-        String name = claimName.isEmpty() ? "Unnamed claim" : claimName;
+        String name = claimName.isEmpty()
+            ? Component.translatable("message.tharidia_realmsandclaim.claim.unnamed").getString()
+            : claimName;
         String timeStr;
         
         if (hours > 0) {
@@ -169,9 +174,10 @@ public class ClaimExpirationHandler {
             timeStr = minutes + " minute" + (minutes > 1 ? "s" : "");
         }
         
-        player.sendSystemMessage(Component.literal("§e§l[!] Warning: Your claim '" + name + 
-            "' at " + claimPos.toShortString() + " will expire in " + timeStr + "!"));
-        player.sendSystemMessage(Component.literal("§7Use /claim info while in the claim to check details"));
+        player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.expiration_warning", name, claimPos.toShortString(), timeStr)
+            .withStyle(style -> style.withColor(0xFFFF55).withBold(true)));
+        player.sendSystemMessage(Component.translatable("command.tharidia_realmsandclaim.claim.use_info")
+            .withStyle(style -> style.withColor(0xAAAAAA)));
     }
 
     private static class ClaimWarning {

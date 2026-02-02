@@ -112,13 +112,13 @@ public class RealmClientHandler {
         if (isInRealm && !wasInRealm) {
             // Just entered realm
             if (!currentRealmOwner.isEmpty()) {
-                player.displayClientMessage(Component.literal("§6Sei nel regno di " + currentRealmOwner), false);
+                player.displayClientMessage(Component.translatable("message.tharidia_realmsandclaim.realm.entered", currentRealmOwner).withStyle(style -> style.withColor(0xFFAA00)), false);
             } else {
-                player.displayClientMessage(Component.literal("§6Sei nel regno"), false);
+                player.displayClientMessage(Component.translatable("message.tharidia_realmsandclaim.realm.entered_unknown").withStyle(style -> style.withColor(0xFFAA00)), false);
             }
         } else if (!isInRealm && wasInRealm) {
             // Just left realm
-            player.displayClientMessage(Component.literal("§7Hai lasciato il regno."), false);
+            player.displayClientMessage(Component.translatable("message.tharidia_realmsandclaim.realm.left").withStyle(style -> style.withColor(0xAAAAAA)), false);
             currentRealmOwner = "";
         }
     }

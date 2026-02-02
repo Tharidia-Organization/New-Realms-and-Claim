@@ -241,7 +241,7 @@ public class PietroBlock extends BaseEntityBlock {
                 // Check if there are any claim blocks within the realm
                 if (hasClaimsInRealm(serverLevel, pietroBlockEntity)) {
                     player.displayClientMessage(
-                        Component.literal("Cannot remove Pietro block while claims exist in its realm!"),
+                        Component.translatable("message.tharidia_realmsandclaim.protection.cannot_remove_pietro").withStyle(style -> style.withColor(0xFF5555)),
                         true
                     );
                     // Restore both blocks on client side

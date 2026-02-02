@@ -35,9 +35,11 @@ public class ClaimBoundaryRenderer {
         boundariesVisible = !boundariesVisible;
         Minecraft mc = Minecraft.getInstance();
         if (mc.player != null) {
-            String status = boundariesVisible ? "§aON" : "§cOFF";
+            net.minecraft.network.chat.Component status = boundariesVisible
+                ? net.minecraft.network.chat.Component.translatable("message.tharidia_realmsandclaim.boundaries.on").withStyle(style -> style.withColor(0x55FF55))
+                : net.minecraft.network.chat.Component.translatable("message.tharidia_realmsandclaim.boundaries.off").withStyle(style -> style.withColor(0xFF5555));
             mc.player.displayClientMessage(
-                net.minecraft.network.chat.Component.literal("§6Boundaries: " + status),
+                net.minecraft.network.chat.Component.translatable("message.tharidia_realmsandclaim.boundaries.status", status).withStyle(style -> style.withColor(0xFFAA00)),
                 true // Show in action bar
             );
         }

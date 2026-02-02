@@ -50,15 +50,15 @@ public class ClaimBlock extends BaseEntityBlock {
             if (realm == null) {
                 // Not in a realm, prevent placement
                 if (player != null) {
-                    player.sendSystemMessage(Component.literal("§cIl Claim può essere piazzato solo in un Regno!"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.must_be_in_realm").withStyle(style -> style.withColor(0xFF5555)));
                 }
                 return null;
             }
 
             // Check if player already has claims in other realms
             if (player != null && hasPlayerClaimInOtherRealms(serverLevel, realm, player)) {
-                player.sendSystemMessage(Component.literal("§cPuoi avere claim solo in un Regno alla volta!"));
-                player.sendSystemMessage(Component.literal("§7Rimuovi i tuoi claim dagli altri regni prima di piazzarne qui."));
+                player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.only_one_realm").withStyle(style -> style.withColor(0xFF5555)));
+                player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.remove_other_claims").withStyle(style -> style.withColor(0xAAAAAA)));
                 return null;
             }
 
@@ -67,10 +67,10 @@ public class ClaimBlock extends BaseEntityBlock {
             if (existingClaim != null) {
                 // Check if it's not owned by another player
                 if (player != null && !player.getUUID().equals(existingClaim.getOwnerUUID())) {
-                    player.sendSystemMessage(Component.literal("§cQuesta chunk è già occupata da un altro claim!"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.chunk_occupied").withStyle(style -> style.withColor(0xFF5555)));
                     return null;
                 }
-                player.sendSystemMessage(Component.literal("§cPuò essere piazzato solo un Claim per chunk!"));
+                player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.one_per_chunk").withStyle(style -> style.withColor(0xFF5555)));
                 return null;
             }
             
@@ -78,16 +78,16 @@ public class ClaimBlock extends BaseEntityBlock {
             if (player != null) {
                 ClaimBlockEntity adjacentClaim = findAdjacentPlayerClaim(serverLevel, pos, player);
                 if (adjacentClaim == null && hasPlayerClaimInRealm(serverLevel, realm, player)) {
-                    player.sendSystemMessage(Component.literal("§cPer espandere il claim, piazzalo adiacente al tuo claim esistente!"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.must_be_adjacent").withStyle(style -> style.withColor(0xFF5555)));
                     return null;
                 } else if (adjacentClaim != null) {
                     int claimCount = getPlayerClaimCount(player.getUUID());
                     if (claimCount > 3) {
                         if (player.hasPermissions(2)) {
-                            player.sendSystemMessage(Component.literal("§cClaim Extra"));
+                            player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.extra_claim").withStyle(style -> style.withColor(0xFF5555)));
                             return this.defaultBlockState();
                         }
-                        player.sendSystemMessage(Component.literal("§cHai raggiunto il massimo di claim!"));
+                        player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.max_claims_reached").withStyle(style -> style.withColor(0xFF5555)));
                         return null;
                     }
                 }
@@ -113,8 +113,8 @@ public class ClaimBlock extends BaseEntityBlock {
                     // This is an expansion - inherit ALL settings from the adjacent claim
                     copyClaimSettings(claimEntity, adjacentClaim);
 
-                    player.sendSystemMessage(Component.literal("§aClaim espanso!"));
-                    player.sendSystemMessage(Component.literal("§eImpostazioni ereditate dal claim principale"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.expanded").withStyle(style -> style.withColor(0x55FF55)));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.settings_inherited").withStyle(style -> style.withColor(0xFFFF55)));
                 } else {
                     // New claim - set default 1-hour rental period
                     long currentTime = System.currentTimeMillis();
@@ -122,8 +122,8 @@ public class ClaimBlock extends BaseEntityBlock {
                     claimEntity.setRented(true, 0, 0.0); // 0 days, 0 cost (free initial hour)
                     claimEntity.setExpirationTime(currentTime + oneHour);
 
-                    player.sendSystemMessage(Component.literal("§aClaim creato: §f" + claimEntity.getClaimName()));
-                    player.sendSystemMessage(Component.literal("§eScade tra: §f1 ora"));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.created", claimEntity.getClaimName()).withStyle(style -> style.withColor(0x55FF55)));
+                    player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.expires_in", "1h").withStyle(style -> style.withColor(0xFFFF55)));
                 }
 
                 // Update expansion level based on total claims owned
@@ -264,8 +264,8 @@ public class ClaimBlock extends BaseEntityBlock {
         int claimCount = getPlayerClaimCount(player.getUUID());
         int protectionRadius = 8 + (claimCount * 8); // Calculate protection radius
 
-        player.sendSystemMessage(Component.literal("§7Possiedi: §f" + claimCount + " Territori"));
-        player.sendSystemMessage(Component.literal("§eRaggio di protezione: §f" + protectionRadius + " blocchi"));
+        player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.you_own", claimCount).withStyle(style -> style.withColor(0xAAAAAA)));
+        player.sendSystemMessage(Component.translatable("message.tharidia_realmsandclaim.claim.protection_radius", protectionRadius).withStyle(style -> style.withColor(0xFFFF55)));
     }
 
 
